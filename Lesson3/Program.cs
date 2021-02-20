@@ -70,14 +70,17 @@ namespace Lesson3
 
             //Task4
             int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int n = 5;
+            int n = -5;
+
+            int shift = n < 0 ? arr.Length + n % arr.Length : n % arr.Length;
+
             int temp;
-            for (int shift = 0; shift < n; shift++)
+            for (int i = 0; i < shift; i++)
             {
                 temp = arr[arr.Length - 1];
-                for (int i = arr.Length - 1; i > 0; i--)
+                for (int j = arr.Length - 1; j > 0; j--)
                 {
-                    arr[i] = arr[i - 1];
+                    arr[j] = arr[j - 1];
                 }
                 arr[0] = temp;
             }
